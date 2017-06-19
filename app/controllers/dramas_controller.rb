@@ -1,5 +1,6 @@
 class DramasController < ApplicationController
   before_action :set_drama, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /dramas
   # GET /dramas.json
@@ -14,7 +15,7 @@ class DramasController < ApplicationController
 
   # GET /dramas/new
   def new
-    @drama = Drama.new
+    @drama = current_user.dramas.build
   end
 
   # GET /dramas/1/edit
@@ -24,7 +25,7 @@ class DramasController < ApplicationController
   # POST /dramas
   # POST /dramas.json
   def create
-    @drama = Drama.new(drama_params)
+    @drama = current_user.dramas.build(drama_params)
 
     respond_to do |format|
       if @drama.save
