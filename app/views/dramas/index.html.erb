@@ -18,6 +18,7 @@
   <tbody>
     <% @dramas.each do |drama| %>
       <tr>
+        <td><%= image_tag drama.image.url(:medium) %></td>
         <td><%= drama.title %></td>
         <td><%= drama.description %></td>
         <td><%= drama.episode %></td>

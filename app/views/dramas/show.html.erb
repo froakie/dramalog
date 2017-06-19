@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= image_tag @drama.image.url(:medium) %>
 
 <p>
   <strong>Title:</strong>
@@ -25,10 +25,6 @@
   <%= @drama.actor %>
 </p>
 
-<p>
-  <strong>Rating:</strong>
-  <%= @drama.rating %>
-</p>
 
 <%= link_to 'Edit', edit_drama_path(@drama) %> |
 <%= link_to 'Back', dramas_path %>

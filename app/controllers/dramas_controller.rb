@@ -70,6 +70,6 @@ class DramasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def drama_params
-      params.require(:drama).permit(:title, :description, :episode, :director, :actor, :rating)
+      params.require(:drama).permit(:title, :description, :episode, :director, :actor, :rating, :image)
     end
 end
