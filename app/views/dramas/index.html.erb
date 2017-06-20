@@ -1,3 +1,11 @@
+<% if !user_signed_in? %>
+  <div class="jumbotron">
+    <h1>Track your favorite dramas today!</h1>
+    <p>Start logging the dramas you've been watching. Never forget which episode you left off on again!</p>
+    <p><%= link_to "Sign Up Now", new_user_registration_path, class:"btn btn-primary btn-lg" %></p>
+<% end %>
+
+
 <div class="row">
   <% @dramas.each do |drama| %>
     <div class="col-sm-6 col-md-3">
